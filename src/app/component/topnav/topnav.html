@@ -1,0 +1,8 @@
+<header class="navbar">
+  <a class="brand" href="#top">Car Dealer</a>
+  <nav aria-label="Main">
+    @for (link of links; track link.label) {
+      <a [href]="link.href">{{ link.label }}</a>
+    }
+  </nav>
+</header>

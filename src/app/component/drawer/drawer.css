@@ -1,0 +1,4 @@
+.side-drawer{
+    display: flex;
+    flex-direction: column;
+}

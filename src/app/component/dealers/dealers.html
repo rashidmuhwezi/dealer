@@ -1,0 +1,27 @@
+<section class="dealers" id="dealers">
+  <h2>Showrooms near you</h2>
+  <div class="grid">
+    @for (dealer of dealers; track dealer.id) {
+      <article class="card">
+        <div class="top">
+          <h3>{{ dealer.name }}</h3>
+          <span class="rating" [attr.aria-label]="'Rated ' + dealer.rating + ' out of 5'">
+            {{ dealer.rating }} / 5
+          </span>
+        </div>
+        <p class="area">{{ dealer.area }}</p>
+        <dl>
+          <div>
+            <dt>In stock</dt>
+            <dd>{{ dealer.carsInStock }} cars</dd>
+          </div>
+          <div>
+            <dt>Open</dt>
+            <dd>{{ dealer.hours }}</dd>
+          </div>
+        </dl>
+        <a class="call" [href]="phoneLink(dealer.phone)">Call {{ dealer.phone }}</a>
+      </article>
+    }
+  </div>
+</section>

@@ -1,0 +1,43 @@
+<section class="cars" id="cars">
+  <div class="heading">
+    <h2>Cars in stock</h2>
+    <div class="filters" role="group" aria-label="Filter by body type">
+      @for (filter of filters; track filter) {
+        <button
+          type="button"
+          [class.active]="selected() === filter"
+          [attr.aria-pressed]="selected() === filter"
+          (click)="selected.set(filter)"
+        >
+          {{ filter }}
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="grid">
+    @for (car of visibleCars(); track car.id) {
+      <article class="card">
+        <div
+          class="photo"
+          role="img"
+          [attr.aria-label]="car.make + ' ' + car.model + ' photo placeholder'"
+          [style.background]="'linear-gradient(135deg,' + car.tint + ',#0b1f2a)'"
+        >
+          <span>{{ car.make }}</span>
+        </div>
+        <div class="body">
+          <h3>{{ car.make }} {{ car.model }}</h3>
+          <p class="specs">
+            {{ car.year }}, {{ car.mileageKm | number }} km, {{ car.fuel }},
+            {{ car.transmission }}
+          </p>
+          <p class="price">UGX {{ car.priceUgx | number }}</p>
+          <a class="btn" href="#contact">Book a test drive</a>
+        </div>
+      </article>
+    } @empty {
+      <p class="empty">No cars match this filter yet. Try another body type.</p>
+    }
+  </div>
+</section>

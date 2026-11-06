@@ -1,0 +1,37 @@
+footer {
+  margin-top: 40px;
+  padding: 40px 48px 24px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+p {
+  max-width: 52ch;
+  margin: 0;
+  color: #c3d9dc;
+}
+
+.copy {
+  max-width: 1200px;
+  margin: 28px auto 0;
+  font-size: 0.85rem;
+  color: #9fbfc3;
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding: 32px 20px 20px;
+  }
+}

@@ -1,0 +1,43 @@
+.navbar {
+  position: sticky;
+  top: 8px;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin: 8px;
+  padding: 14px 48px;
+  background: #eef7ff;
+  color: #0b1220;
+  border-radius: 14px;
+}
+
+.brand {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+}

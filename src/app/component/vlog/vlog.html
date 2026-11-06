@@ -1,0 +1,31 @@
+<section class="vlog" id="vlog">
+  <h2>From the Car Dealer vlog</h2>
+
+  <div class="layout">
+    <a class="featured" [href]="featured.url" target="_blank" rel="noopener">
+      <div class="thumb" [style.background]="'linear-gradient(135deg,' + featured.tint + ',#0b1f2a)'">
+        <span class="play" aria-hidden="true"></span>
+        <span class="duration">{{ featured.duration }}</span>
+      </div>
+      <h3>{{ featured.title }}</h3>
+      <p>{{ featured.summary }}</p>
+      <small>{{ featured.published }}</small>
+    </a>
+
+    <ul class="list">
+      @for (video of others; track video.id) {
+        <li>
+          <a [href]="video.url" target="_blank" rel="noopener">
+            <div class="mini" [style.background]="'linear-gradient(135deg,' + video.tint + ',#0b1f2a)'">
+              <span class="play small" aria-hidden="true"></span>
+            </div>
+            <div class="info">
+              <h4>{{ video.title }}</h4>
+              <small>{{ video.duration }}, {{ video.published }}</small>
+            </div>
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
